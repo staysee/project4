@@ -19,7 +19,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
-app.use(routes);
+
+//Routes
+app.use('/', routes)
 
 // Start Server
 app.listen(3000);
