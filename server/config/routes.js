@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var UserController = require('../controllers/userscontroller');
+var usersController = require('../controllers/userscontroller');
 var JobController = require('../controllers/jobscontroller');
 
 
 router.route('/')
+    .get(usersController.welcome)
 
 
 module.exports = router;
