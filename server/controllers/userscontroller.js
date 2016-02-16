@@ -20,7 +20,7 @@ module.exports = {
     var user = new User(req.body)
 
     user.save(function (err) {
-      if(err) res.json({ message: 'Could not create user b/c ' + error })
+      if(err) res.json({ message: 'Could not create user b/c ' + err })
 
       res.json({ user: user})
     })
