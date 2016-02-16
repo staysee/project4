@@ -10,10 +10,10 @@ router.route('/users')
   .get(usersController.users)     //GET all users
   .post(usersController.create) //POST a new user
 
-// router.route('/users/:id')
-//   .get(usersController.one)     //GET one specific user
-//   .patch(usersController.update)//PATCH update existing user
-//   .delete(usersController.delete)//DELETE remove user from DB
+router.route('/users/:id')
+  .get(usersController.one)     //GET one specific user
+  .patch(usersController.update)//PATCH update existing user
+  .delete(usersController.delete)//DELETE remove user from DB
 
 
 module.exports = router;
