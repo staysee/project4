@@ -20,7 +20,8 @@ var userSchema = Schema({
   links   : { portfolio_url: String,
               linkedin_url : String,
               github_url   : String
-          }
+          },
+  posts   : [{ type: Schema.Types.ObjectId, ref: 'Post' }]
 
 });
 

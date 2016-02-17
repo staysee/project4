@@ -4,6 +4,7 @@ angular.module('Project4')
 UsersController.$inject = ['$http']
 
 function UsersController ($http) {
+  var url = 'http://localhost:3000'
   var vm = this;
   vm.all = [];
   vm.createUser = createUser;
@@ -12,26 +13,37 @@ function UsersController ($http) {
   vm.deleteUser = deleteUser;
 
   function allUsers () {
-    return $http.get('/users/')
+    $http.get(url + '/users/').then(function (data) {
+      console.log(data)
+    })
   }
+  allUsers();
 
   function getUser (id) {
-    return $http.get('/users/' + id)
+    $http.get(url + '/users/' + id).then(function (data) {
+
+    })
   }
 
   //create a user
   function createUser (userData) {
-    return $http.post('/users/', userData)
+    $http.post(url + '/users/', userData).then(function (data) {
+
+    })
   }
 
   //update a user
   function updateUser (id, userData) {
-    return $http.put('/users/' + id, userData)
+    $http.put(url + '/users/' + id, userData).then(function (data) {
+
+    })
   }
 
   //delete a user
   function deleteUser (id) {
-    return $http.delete('/users/' + id)
+    $http.delete(url + '/users/' + id).then(function (data) {
+
+    })
   }
 
 }
