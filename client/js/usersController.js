@@ -4,8 +4,23 @@ angular.module('Project4')
 UsersController.$inject = ['$http']
 
 function UsersController ($http) {
-  var url = 'http://localhost:3000'
   var vm = this;
+
+  vm.user = {
+    name: {first: "Stacey", last: "Ono"},
+    username: "ssugiono",
+    email: "stacey@gmail.com",
+    password: "password",
+    profile_image_url: "http://tinyurl.com/zdsxwl5",
+    location: {city: "Pasadena", state: "CA", country: "USA"},
+    category: {developer: "True", designer: "False"},
+    links: {portfolio_url: "http://www.staceysugiono.com",
+            linkedin_url: "https://www.linkedin.com/in/staceysugiono"},
+            github_url: "https://github.com/staysee"}
+  }
+
+
+  var url = 'http://localhost:3000'
   vm.all = [];
   vm.createUser = createUser;
   vm.newUser = {};
