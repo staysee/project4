@@ -1,4 +1,4 @@
-angular.module('Project 4')
+angular.module('Project4')
     .controller('GalleryController', GalleryController)
 
 function GalleryController() {
