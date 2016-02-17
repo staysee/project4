@@ -8,10 +8,10 @@ var postSchema = Schema({
   description   : String,
   screenshots   : [String],
   link          : String,
-  type          : String, //gallery post or job post
+  type          : String,   //gallery post or job post
   completed     : Boolean,  //finished proj or in-progress
-  schedule      : String, //fulltime or contract?
-  position      : String,  //developer/designer etc
+  schedule      : String,   //fulltime or contract?
+  position      : String,   //developer/designer etc
   contact       : { name: String,
                     phone: String,
                     email: String,
