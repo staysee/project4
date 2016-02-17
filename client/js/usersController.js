@@ -4,7 +4,7 @@ angular.module('Project4')
 UsersController.$inject = ['$http']
 
 function UsersController ($http) {
-  var vm = this;
+  var vm = this
 
   vm.user = {
     name: {first: "Stacey", last: "Ono"},
@@ -15,7 +15,7 @@ function UsersController ($http) {
     location: {city: "Pasadena", state: "CA", country: "USA"},
     category: {developer: "True", designer: "False"},
     links: {portfolio_url: "http://www.staceysugiono.com",
-            linkedin_url: "https://www.linkedin.com/in/staceysugiono"},
+            linkedin_url: "https://www.linkedin.com/in/staceysugiono",
             github_url: "https://github.com/staysee"}
   }
 
@@ -36,28 +36,28 @@ function UsersController ($http) {
 
   function getUser (id) {
     $http.get(url + '/users/' + id).then(function (data) {
-
+      console.log(data)
     })
   }
 
   //create a user
   function createUser (userData) {
     $http.post(url + '/users/', userData).then(function (data) {
-
+      console.log(data)
     })
   }
 
   //update a user
   function updateUser (id, userData) {
     $http.put(url + '/users/' + id, userData).then(function (data) {
-
+      console.log(data)
     })
   }
 
   //delete a user
   function deleteUser (id) {
     $http.delete(url + '/users/' + id).then(function (data) {
-
+      console.log(data)
     })
   }
 

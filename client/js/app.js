@@ -1,4 +1,4 @@
-angular.module('Project4', ['ui.router'])
+angular.module('Project4', ['ui.router', 'uiRouterStyles'])
     .config(MainRouter)
 
 function MainRouter($stateProvider, $urlRouterProvider) {
@@ -10,11 +10,16 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     })
     .state('gallery', {
       url: "/gallery",
-      templateUrl: "templates/gallery.html"
+      templateUrl: "templates/gallery.html",
+      controller: "GalleryController",
+      controllerAs: "vm"
     })
     .state('hiring', {
       url: "/hiring",
-      templateUrl: "templates/hiring.html"
+      templateUrl: "templates/hiring.html",
+      controller: "JobsController",
+      controllerAs: "vm",
+      data: {css: ["assets/css/hiring.css"]}
     })
 
     $urlRouterProvider.otherwise("/")

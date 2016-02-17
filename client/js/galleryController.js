@@ -4,7 +4,7 @@ angular.module('Project4')
 function GalleryController() {
   var vm = this;
 
-  vm.post = {
+  vm.galleryPost = {
     title: "Battleship",
     description: "A 2 player game in HTML, CSS, Javascript.",
     screenshots: ["http://tinyurl.com/hexzasu", "../assets/images/battleship.png"],

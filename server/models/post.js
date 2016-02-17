@@ -7,6 +7,7 @@ var postSchema = Schema({
   title         : String,
   description   : String,
   screenshots   : [String],
+  company       : String,
   link          : String,
   type          : String,   //gallery post or job post
   completed     : Boolean,  //finished proj or in-progress
