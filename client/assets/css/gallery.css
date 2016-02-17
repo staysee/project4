@@ -1,0 +1,19 @@
+body {
+  background: url('../images/gallery2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.soon {
+  background-color: rgba(0,0,0,0.8);
+  color: #65BFFF;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -270px;
+  width: 500px;
+  height: 100px;
+}​
