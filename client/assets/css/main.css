@@ -1,4 +1,13 @@
 /* NAVIGATION SETTINGS */
+#logo {
+  float: left;
+  color:white;
+  font-size: 28px;
+  font-weight: bolder;
+  text-transform: uppercase;
+
+}
+
 .nav {
   position: absolute;
   top: 0;
@@ -8,11 +17,12 @@
   background: rgba(0,0,0,0.5);
 }
 
-
 .nav a {
   color: white;
   text-transform: uppercase;
   font-size: 25px;
   font-weight: bolder;
   padding: 0px 20px;
+  float: right;
 }
+
