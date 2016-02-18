@@ -4,10 +4,10 @@ angular.module('Project4')
 function JobPostsService() {
   return {
     jobPosts: [
-      { title      : "Full Stack Developer - Ruby on Rails",
-        description: "Talented and smart people only.",
-        company    : "ABC Company",
-        link       : "http//www.abc.com",
+      { title      : "Ruby on Rails Developer",
+        description: "Smart people only.",
+        company    : "Gemstone",
+        link       : "http//www.gem.com",
         type       : "job post",
         schedule   : "contract",
         position   : "developer",
@@ -17,12 +17,12 @@ function JobPostsService() {
       },
       { title      : "Front-End Developer",
         description: "Skilled",
-        company    : "Cookie Co.",
+        company    : "Cookies Co.",
         schedule   : "Full-Time"
       },
       { title      : "Back-End Developer",
         description: "10 years",
-        company    : "Table Top",
+        company    : "Apple Tree, Inc.",
         schedule   : "Contract"
       },
       { title      : "Genius Developer",
@@ -35,19 +35,19 @@ function JobPostsService() {
         company    : "Super Duper",
         schedule   : "Full-Time"
       },
-      { title      : "Front-End Developer",
-        description: "Skilled",
-        company    : "Cookie Co.",
+      { title      : "Full Stack Developer",
+        description: "No experience necessary",
+        company    : "Target",
         schedule   : "Contract"
       }
     ],
 
     addJobPost: function (jobPosts) {
-    if(!this.title || this.title ==='') {return;}
+    if(!this.company || this.company ==='') {return;}
       this.jobPosts.push({
+        company: this.company,
         title: this.title,
         description: this.description,
-        company: this.company,
         schedule: this.schedule
       })
     this.title='';
