@@ -14,9 +14,7 @@ var userSchema = Schema({
                       state  : String,
                       country: String
                     },
-  category: { developer: Boolean,
-              designer : Boolean
-          },
+  category: String,
   links   : { portfolio_url: String,
               linkedin_url : String,
               github_url   : String

@@ -1,0 +1,14 @@
+body {
+  color: yellow;
+}
+
+ul#users {
+  list-style: none;
+}
+
+.profile-list {
+  width: 80%;
+  margin:  auto;
+  margin-top: 20%;
+  border: 2px solid white;
+}

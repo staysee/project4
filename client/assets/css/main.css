@@ -1,3 +1,10 @@
+body {
+  background: url('../images/grey_texture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+
+}
 /* NAVIGATION SETTINGS */
 #logo {
   float: left;

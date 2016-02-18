@@ -1,0 +1,13 @@
+<div class="profile-list">
+  <ul id="users">
+    <li ng-repeat="user in vm.all">
+      <a ui-sref="profiles.detail({id: user._id})"><strong>{{user.name.first}} {{user.name.last}} - {{user.category}} {{user.location.city}}, {{user.location.state}}</strong></a>
+    </li>
+  </ul>
+  <div>{{vm.user}}</div>
+
+
+  <div ui-view>
+
+  </div>
+</div>
