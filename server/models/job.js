@@ -2,15 +2,12 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 
-var postSchema = Schema({
+var jobSchema = Schema({
 
   title         : String,
   description   : String,
-  screenshots   : [String],
   company       : String,
   link          : String,
-  type          : String,   //gallery post or job post
-  completed     : Boolean,  //finished proj or in-progress
   schedule      : String,   //fulltime or contract?
   position      : String,   //developer/designer etc
   contact       : { name: String,
@@ -24,6 +21,6 @@ var postSchema = Schema({
 
 });
 
-var Post = mongoose.model('Post', postSchema)
-module.exports = Post
+var Job = mongoose.model('Job', jobSchema)
+module.exports = Job;
 
