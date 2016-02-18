@@ -26,6 +26,9 @@ ul {
   padding: 3em;
 }
 
+a:hover {
+  text-decoration: none;
+}
 ul li a {
   text-decoration: none;
   color: #000;

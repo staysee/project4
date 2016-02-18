@@ -2,47 +2,33 @@
 
 <div>
 <ul>
-  <li>
+  <li ng-repeat="post in vm.jobPosts">
     <a href="#">
-      <h2>{{vm.jobPost.company}}</h2>
-      <p>{{vm.jobPost.title}}</p>
-      <p>Employment: {{vm.jobPost.schedule}}</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>{{vm.jobPost.company}}</h2>
-      <p>{{vm.jobPost.title}}</p>
-      <p>Employment: {{vm.jobPost.schedule}}</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>{{vm.jobPost.company}}</h2>
-      <p>{{vm.jobPost.title}}</p>
-      <p>Employment: {{vm.jobPost.schedule}}</p>
-    </a>
-  </li>
-  <li>
-    <a href="#">
-      <h2>{{vm.jobPost.company}}</h2>
-      <p>{{vm.jobPost.title}}</p>
-      <p>Employment: {{vm.jobPost.schedule}}</p>
-    </a>
-  </li>
-   <li>
-    <a href="#">
-      <h2>{{vm.jobPost.company}}</h2>
-      <p>{{vm.jobPost.title}}</p>
-      <p>Employment: {{vm.jobPost.schedule}}</p>
-    </a>
-  </li>
-   <li>
-    <a href="#">
-      <h2>{{vm.jobPost.company}}</h2>
-      <p>{{vm.jobPost.title}}</p>
-      <p>Employment: {{vm.jobPost.schedule}}</p>
+      <h2>{{post.company}}</h2>
+      <p>{{post.title}}</p>
+      <p>Employment: {{post.schedule}}</p>
     </a>
   </li>
 </ul>
 </div>
+
+
+
+<form ng-submit="addJobPost()"
+      style="margin-top:30px;">
+  <h3>Post a Job</h3>
+
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Title" ng-model="vm.title"></input>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Description" ng-model="vm.description"></input>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Company" ng-model="vm.company"></input>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Schedule" ng-model="vm.schedule"></input>
+  </div>
+  <button type="submit" class="btn btn-primary" ng-click="vm.addJobPost()">Post</button>
+</form>
