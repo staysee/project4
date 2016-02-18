@@ -25,6 +25,11 @@ function JobPostsService() {
         company    : "Apple Tree, Inc.",
         schedule   : "Contract"
       },
+      { title      : "Full Stack Developer",
+        description: "No experience necessary",
+        company    : "Target",
+        schedule   : "Contract"
+      },
       { title      : "Genius Developer",
         description: "Super skilled. Super smart.",
         company    : "Top Secret",
@@ -35,11 +40,18 @@ function JobPostsService() {
         company    : "Super Duper",
         schedule   : "Full-Time"
       },
-      { title      : "Full Stack Developer",
-        description: "No experience necessary",
-        company    : "Target",
-        schedule   : "Contract"
+      { title      : "Game Developer",
+        description: "Great Pay. Good life. Just play games all day!",
+        company    : "Activision",
+        schedule   : "Full Time"
+      },
+      {
+        title      : "Ninja Programmer",
+        description: "Must be a Google search master. Free food. Free beers.",
+        company    : "N/A",
+        schedule   : "Full Time"
       }
+
     ],
 
     addJobPost: function (jobPosts) {
