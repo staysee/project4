@@ -7,7 +7,7 @@ function UsersController ($http, $stateParams, $state) {
   var vm = this
 
   vm.user = {
-    name: {first: "Bob", last: "Front"},
+    name: {first: "S", last: "S"},
     username: "ssugiono",
     email: "stacey@gmail.com",
     password: "password",
@@ -20,7 +20,7 @@ function UsersController ($http, $stateParams, $state) {
   }
 
 
-  var url = 'http://localhost:3000'
+  var url = 'http://localhost:3000/api'
   vm.all = [];
   vm.createUser = createUser;
   vm.newUser = {};
