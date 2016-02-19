@@ -10,6 +10,7 @@ module.exports = {
   },
 
   create: function (req, res, next) {
+    console.log(req.body)
     var post = new Post(req.body)
 
     post.save(function (err) {

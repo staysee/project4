@@ -1,7 +1,7 @@
 angular.module('Project4')
   .factory('JobPosts', JobPostsService)
 
-function JobPostsService() {
+function JobPostsService($http) {
   return {
     jobPosts: [
       { title      : "Ruby on Rails Developer",
@@ -54,18 +54,25 @@ function JobPostsService() {
 
     ],
 
-    addJobPost: function (jobPosts) {
-    if(!this.company || this.company ==='') {return;}
-      this.jobPosts.push({
+    addJobPost: function () {
+      if(!this.company || this.company ==='') {return;}
+      var jobPost = {
         company: this.company,
         title: this.title,
         description: this.description,
         schedule: this.schedule
+      }
+      this.jobPosts.push(jobPost)
+      $http.post('http://localhost:3000/api/posts', {job: jobPost}).then(function (data) {
+        console.log("JOB POST DATA: ", data)
+      }, function (err) {
+        if (err) console.log("Post Error: ", err)
       })
-    this.title='';
-    this.description='';
-    this.company='';
-    this.schedule='';
+
+      this.title='';
+      this.description='';
+      this.company='';
+      this.schedule='';
   }
 
   }
