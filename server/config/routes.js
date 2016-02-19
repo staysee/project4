@@ -20,7 +20,7 @@ router.route('/users/:id')
 
 
 router.route('/posts')
-  .get(postsController.jobs)     //GET all jobs
+  .get(postsController.posts)     //GET all jobs
   .post(postsController.create)  //POST a new job
 
 router.route('/posts/:id')
