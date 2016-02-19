@@ -33,10 +33,10 @@ angular.module('Project4', [])
   }
 
   authFactory.getUser = function() {      //get logged in user info
-    if (AuthToken.getToken())
-      return $http.get('http://localhost3000/api/me')
+    if (AuthToken.getToken())             //returns cached info, if none - makes API call
+      return $http.get('http://localhost3000/api/me', { cache: true })
     else
-      return $q.reject({message: 'User has no token.'})
+      return $q.reject({ message: 'User has no token.' })
   }
 
   return authFactory;     //return auth factory object

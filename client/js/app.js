@@ -7,6 +7,8 @@ function MainRouter($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: "/",
       templateUrl: "templates/home.html",
+      // controller: "MainController",
+      // controllerAs: "vm",
       data: {css: ["assets/css/main.css"]}
     })
     // GALLERY //
