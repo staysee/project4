@@ -3,9 +3,9 @@ var mongoose = require('mongoose');
 
 module.exports = {
 
-  welcome: function (req, res, next) {
-    res.send('Welcome to Project 4 Home Page')
-  },
+  // welcome: function (req, res, next) {
+  //   res.send('Welcome to Project 4 Home Page')
+  // },
 
   users: function (req, res, next) {
     User.find(function (err, users) {
@@ -19,11 +19,8 @@ module.exports = {
   create: function (req, res, next) {
     var user = new User(req.body)
 
-    user.save(function (err) {
-      if(err) res.json({ message: 'Could not create user b/c ' + err })
-
-      res.json({ user: user})
-    })
+    user.save()
+    res.send('created user')
   },
 
   one: function (req, res, next) {

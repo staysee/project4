@@ -20,7 +20,6 @@ var jobSchema = Schema({
                   }
 
 });
-
 var Job = mongoose.model('Job', jobSchema)
 module.exports = Job;
 
