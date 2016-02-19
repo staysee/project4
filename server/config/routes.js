@@ -20,13 +20,13 @@ router.route('/users/:id')
 
 
 router.route('/posts')
-  .get(postsController.posts)     //GET all jobs
-  .post(postsController.create)  //POST a new job
+  .get(postsController.posts)     //GET all posts
+  .post(postsController.create)  //POST a new post
 
 router.route('/posts/:id')
-  .get(postsController.one)      //GET one specific job
-  .patch(postsController.update) //PATCH update exisiting job
-  .delete(postsController.delete)//DELETE remove a job from DB
+  .get(postsController.one)      //GET one specific post
+  .patch(postsController.update) //PATCH update exisiting post
+  .delete(postsController.delete)//DELETE remove a post from DB
 
 //Catchall Route
 //Send users to FRONT END (must come after API routes)

@@ -1,6 +1,6 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-var bcrypt = require('bcrypt-nodejs')
+var bcrypt = require('bcrypt')
 
 
 var userSchema = Schema({
@@ -8,7 +8,7 @@ var userSchema = Schema({
                       last : String
                     },
   username         : { type: String, required: true, index: {unique: true}},
-  email            : String,
+  email            : { type: String, require: true, index: {unique: true}},
   password         : { type: String, required: true, select: false },
   profile_image_url: String,
   location         : {city   : String,
