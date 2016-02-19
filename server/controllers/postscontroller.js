@@ -5,7 +5,7 @@ module.exports = {
 
   posts: function (req, res, next) {
     Post.find({}, function(err, jobs){
-      res.json({posts: posts})
+      // res.json({posts: posts})
     })
   },
 
