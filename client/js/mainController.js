@@ -28,8 +28,8 @@ function MainController($rootScope, $location, Auth) {
   vm.doLogout = function() {
     Auth.logout();
     //reset all user info
-    vm.user = ();
+    vm.user = {};
     $location.path('/login')
   }
 
-})
+}
