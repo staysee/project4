@@ -9,6 +9,9 @@ var postsController = require('../controllers/postscontroller');
 // router.route('/')
 //   .get(usersController.welcome)
 
+router.route('/authenticate')
+  .post(usersController.authenticate)
+
 router.route('/users')
   .get(usersController.users)     //GET all users
   .post(usersController.create) //POST a new user

@@ -7,10 +7,10 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var passport = require('passport');
-var bcrypt = require('bcrypt');
+var Promise = require('bluebird');
 
 //connect to database
-var mongoose = require('mongoose');
+var mongoose = Promise.promisifyAll(require('mongoose'));
 mongoose.connect('mongodb://localhost:27017/project4');
 // mongoose.connect('mongodb://heroku_48wxpmg2:iejm1ovjfcj3t8cpp59f5emrde@ds039135.mongolab.com:39135/heroku_48wxpmg2');
 

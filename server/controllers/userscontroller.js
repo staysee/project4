@@ -1,5 +1,8 @@
 var User = require('../models/user');
 var mongoose = require('mongoose');
+var jwt = require('jsonwebtoken');
+var superSecret = 'thissecretissuperdupersecret'
+
 
 module.exports = {
 
@@ -19,8 +22,13 @@ module.exports = {
   create: function (req, res, next) {
     var user = new User(req.body)
 
-    user.save()
-    res.send('created user')
+    user.save(function (err) {
+      if (err) {
+        console.log("user save error: ", err)
+      } else {
+        res.send('created user')
+      }
+    })
   },
 
   one: function (req, res, next) {
@@ -47,6 +55,42 @@ module.exports = {
       if(err) console.log(err)
       res.send('user deleted!')
       })
+  },
+
+  authenticate: function (req, res) {
+    //find user. select name username password explicitly
+    User.findOne({
+      username: req.body.username
+    }).select('name username password').exec(function (err, user) {
+      if (err) throw err;
+      //no user with that username found
+      if (!user) {
+        res.json({ success: false, message: 'Authentication failed. User not found'})
+      } else if (user) {
+        //check if password matches
+        var validPassword = user.comparePasswordSync(req.body.password);
+
+        if (!validPassword) {
+          res.json({ success: false, message: 'Authentication failed. Wrong password.'})
+        } else {
+          //if user found, password right. create token
+          var token = jwt.sign({
+            name: user.name,
+            username: user.username
+          }, superSecret, {
+            expiresinMinutes: 1440  //expires in 24 hours
+          })
+
+          //return the info including token as JSON
+          res.json({
+            succes: true,
+            message: 'Enjoy your token!',
+            token: token
+          });
+        }
+      }
+    })
   }
+
 }
 

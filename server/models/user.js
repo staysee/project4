@@ -1,14 +1,13 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-var bcrypt = require('bcrypt')
+var Promise = require('bluebird')
+var bcrypt = Promise.promisifyAll(require('../node_modules/bcrypt'))
 
 
 var userSchema = Schema({
-  name             : {first: String,
-                      last : String
-                    },
+  name             : String,
   username         : { type: String, required: true, index: {unique: true}},
-  email            : { type: String, require: true, index: {unique: true}},
+  email            : { type: String, required: true, index: {unique: true}},
   password         : { type: String, required: true, select: false },
   profile_image_url: String,
   location         : {city   : String,
@@ -26,23 +25,26 @@ var userSchema = Schema({
 //hash password before user is saved
 userSchema.pre('save', function (next) {
   var user = this;
+
   //hash password only if password changed or is new
   if (!user.isModified('password')) return next();
 
-  //generate hash
-  bcrypt.hash(user.password, null, null, function (err, hash) {
-    if (err) return next(err);
+  return bcrypt.genSaltAsync(10).then(function(result) {
+    //generate hash
 
-    //change password to hashed version
-    user.password = hash;
-    next();
+    return bcrypt.hashAsync(user.password, result).then(function(hash) {
+
+      //change password to hashed version
+      user.password = hash;
+      next();
+    })
   })
 })
 
 //compare given password with database hash
-userSchema.methods.comparePassword = function (password) {
+userSchema.methods.comparePasswordSync = function (candidatePassword) {
   var user = this;
-  return bcrypt.compareSync(password, user.password);
+  return bcrypt.compareSync(candidatePassword, user.password);
 }
 
 
