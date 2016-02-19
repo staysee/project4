@@ -1,5 +1,5 @@
 <div class="nav">
-  <div id="logo"><a ui-sref="home">PostIT {{1+2}}</a></div>
+  <div id="logo"><a ui-sref="home">PostIt</a></div>
   <div id="logRegister">
     <a>Register</a>
 
@@ -14,6 +14,7 @@
 </div>
 
 <div class="profile-list">
+  <h2>Find A Developer</h2>
   <ul id="users">
     <li ng-repeat="user in vm.all">
       <a ui-sref="profiles.detail({id: user._id})"><strong>{{user.username}} - {{user.category}} {{user.location.city}}, {{user.location.state}}</strong></a>

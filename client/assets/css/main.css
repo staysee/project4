@@ -9,9 +9,10 @@ body {
 #logo {
   float: left;
   color:white;
-  font-size: 28px;
+  font-size: 25px;
   font-weight: bolder;
-  text-transform: none;
+  text-transform: none !important;
+  font-family: "Reenie Beanie", arial, sans-serif;
 }
 
 .nav {
@@ -30,5 +31,19 @@ body {
   font-weight: bolder;
   padding: 0px 20px;
   float: right;
+}
+
+#homeTitle {
+  font-family: "Reenie Beanie", arial, sans-serif;
+  font-size: 80px;
+  color: #74FFA5;
+  font-size: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -66px;
+  margin-left: -205px;
+  width: 500px;
+  height: 100px;
 }
 
