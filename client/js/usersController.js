@@ -27,7 +27,8 @@ function UsersController ($http, $stateParams, $state) {
   vm.getUser = getUser;
   vm.updateUser = updateUser;
   vm.deleteUser = deleteUser;
-  vm.user = {};
+
+  vm.user = {};                 //create a new object
 
   function allUsers () {
     $http.get(url + '/users/')

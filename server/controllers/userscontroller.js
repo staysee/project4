@@ -1,7 +1,8 @@
 var User = require('../models/user');
 var mongoose = require('mongoose');
+var config = require('../config');
 var jwt = require('jsonwebtoken');
-var superSecret = 'thissecretissuperdupersecret'
+var superSecret = config.secret;
 
 
 module.exports = {
