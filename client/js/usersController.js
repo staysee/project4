@@ -6,18 +6,18 @@ UsersController.$inject = ['$http']
 function UsersController ($http, $stateParams, $state) {
   var vm = this
 
-  vm.user = {
-    name: {first: "S", last: "S"},
-    username: "ssugiono",
-    email: "stacey@gmail.com",
-    password: "password",
-    profile_image_url: "http://tinyurl.com/zdsxwl5",
-    location: {city: "Pasadena", state: "CA", country: "USA"},
-    category: "developer",
-    links: {portfolio_url: "http://www.staceysugiono.com",
-            linkedin_url: "https://www.linkedin.com/in/staceysugiono",
-            github_url: "https://github.com/staysee"}
-  }
+  // vm.user = {
+  //   name: {first: "S", last: "S"},
+  //   username: "ssugiono",
+  //   email: "stacey@gmail.com",
+  //   password: "password",
+  //   profile_image_url: "http://tinyurl.com/zdsxwl5",
+  //   location: {city: "Pasadena", state: "CA", country: "USA"},
+  //   category: "developer",
+  //   links: {portfolio_url: "http://www.staceysugiono.com",
+  //           linkedin_url: "https://www.linkedin.com/in/staceysugiono",
+  //           github_url: "https://github.com/staysee"}
+  // }
 
 
   var url = 'http://localhost:3000/api'
@@ -28,6 +28,7 @@ function UsersController ($http, $stateParams, $state) {
   vm.updateUser = updateUser;
   vm.deleteUser = deleteUser;
   vm.user = {};
+
   function allUsers () {
     $http.get(url + '/users/')
           .then(function (data) {

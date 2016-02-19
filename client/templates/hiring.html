@@ -1,15 +1,30 @@
+  <div class="nav">
+    <div id="logo"><a ui-sref="home">PostIT {{1+2}}</a></div>
+    <div id="logRegister">
+      <a>Register</a>
+
+    </div>
+
+    <div id="nav">
+      <!-- <a ui-sref="home">Home</a> -->
+      <a ui-sref="gallery">Gallery</a>
+      <a ui-sref="hiring">Hiring</a>
+      <a ui-sref="profiles">Profiles</a>
+    </div>
+  </div>
+
 <h1>HIRING</h1>
 
 <div class="board-container">
 
 <div id="postIts">
 <ul>
-  <li ng-repeat="post in vm.jobPosts">
+  <li ng-repeat="post in vm.all">
     <a href="#">
-      <h2 id="companyP">{{post.company}}</h2>
-      <p id="titleP">{{post.title}}</p>
-      <p id="descriP">{{post.description}}</p>
-      <p id="schedP"><strong>Employment:</strong> {{post.schedule}}</p>
+      <h2 id="companyP">{{post.job.company}}</h2>
+      <p id="titleP">{{post.job.title}}</p>
+      <p id="descriP">{{post.job.description}}</p>
+      <p id="schedP"><strong>Employment:</strong> {{post.job.schedule}}</p>
     </a>
   </li>
 </ul>

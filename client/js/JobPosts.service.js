@@ -27,7 +27,7 @@ function JobPostsService($http) {
       },
       { title      : "Full Stack Developer",
         description: "No experience necessary",
-        company    : "Target",
+        company    : "Google",
         schedule   : "Contract"
       },
       { title      : "Genius Developer",
@@ -42,7 +42,7 @@ function JobPostsService($http) {
       },
       { title      : "Game Developer",
         description: "Great Pay. Good life. Just play games all day!",
-        company    : "Activision",
+        company    : "Blizzard",
         schedule   : "Full Time"
       },
       {
@@ -73,8 +73,9 @@ function JobPostsService($http) {
       this.description='';
       this.company='';
       this.schedule='';
-  }
+    }
 
   }
+
 }
 

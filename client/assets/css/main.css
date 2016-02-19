@@ -11,8 +11,7 @@ body {
   color:white;
   font-size: 28px;
   font-weight: bolder;
-  text-transform: uppercase;
-
+  text-transform: none;
 }
 
 .nav {
