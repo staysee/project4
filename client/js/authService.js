@@ -11,7 +11,7 @@ angular.module('Project4', [])
 
   authFactory.login = function(username, password) {    //login user
     //return promise object and its data
-    return $http.post('http://localhost:3000/api/authenticate', {
+    return $http.post(URI + 'authenticate', {
       username: username,
       password: password
     })
@@ -34,7 +34,7 @@ angular.module('Project4', [])
 
   authFactory.getUser = function() {      //get logged in user info
     if (AuthToken.getToken())
-      return $http.get('http://localhost3000/api/me')
+      return $http.get(URI + 'me')
     else
       return $q.reject({message: 'User has no token.'})
   }

@@ -63,7 +63,7 @@ function JobPostsService($http) {
         schedule: this.schedule
       }
       this.jobPosts.push(jobPost)
-      $http.post('http://localhost:3000/api/posts', {job: jobPost}).then(function (data) {
+      $http.post(URL + 'posts', {job: jobPost}).then(function (data) {
         console.log("JOB POST DATA: ", data)
       }, function (err) {
         if (err) console.log("Post Error: ", err)

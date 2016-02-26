@@ -20,7 +20,7 @@ function UsersController ($http, $stateParams, $state) {
   // }
 
 
-  var url = 'http://localhost:3000/api'
+  // var url = 'http://localhost:3000/api'
   vm.all = [];
   vm.createUser = createUser;
   vm.newUser = {};
@@ -31,7 +31,7 @@ function UsersController ($http, $stateParams, $state) {
   vm.user = {};                 //create a new object
 
   function allUsers () {
-    $http.get(url + '/users/')
+    $http.get(URI + 'users/')
           .then(function (data) {
             vm.all = data.data.users;
       // console.log(data)
@@ -40,7 +40,7 @@ function UsersController ($http, $stateParams, $state) {
   allUsers();
 
   function getUser (user) {
-    $http.get(url + '/users/' + user._id)
+    $http.get(URI + 'users/' + user._id)
       .then(function(data){
         console.log(data)
           vm.user = data.data.user
@@ -55,21 +55,21 @@ function UsersController ($http, $stateParams, $state) {
 
   //create a user
   function createUser (userData) {
-    $http.post(url + '/users/', userData).then(function (data) {
+    $http.post(URI + 'users/', userData).then(function (data) {
       console.log(data)
     })
   }
 
   //update a user
   function updateUser (id, userData) {
-    $http.put(url + '/users/' + id, userData).then(function (data) {
+    $http.put(URI + 'users/' + id, userData).then(function (data) {
       console.log(data)
     })
   }
 
   //delete a user
   function deleteUser (id) {
-    $http.delete(url + '/users/' + id).then(function (data) {
+    $http.delete(URI + 'users/' + id).then(function (data) {
       console.log(data)
     })
   }

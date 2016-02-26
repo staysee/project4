@@ -1,3 +1,6 @@
+const URI = 'http://postit-project.herokuapp.com/api/';
+// const URI = 'http://localhost:3000/api/';
+
 angular.module('Project4', ['ui.router', 'uiRouterStyles'])
     .config(MainRouter)
 

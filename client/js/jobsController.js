@@ -3,13 +3,12 @@ angular.module('Project4')
 
 function JobsController(JobPosts, $http) {
   var vm = this;
-  var url = 'http://localhost:3000/api'
 
   vm.jobPosts = JobPosts.jobPosts;
   vm.addJobPost = JobPosts.addJobPost;
 
   function jobPosts () {
-    $http.get(url + '/posts/')
+    $http.get(URI + '/posts/')
         .then(function (data) {
           JobPosts.jobPosts = data.data.posts
           vm.jobPosts = JobPosts.jobPosts
