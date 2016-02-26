@@ -13,9 +13,9 @@ var config = require('./config');
 
 //connect to database
 var mongoose = Promise.promisifyAll(require('mongoose'));
-mongoose.connect('mongodb://localhost:27017/project4');
-// mongoose.connect('mongodb://heroku_48wxpmg2:iejm1ovjfcj3t8cpp59f5emrde@ds039135.mongolab.com:39135/heroku_48wxpmg2');
-//mongoose.connect(config.database);
+// mongoose.connect('mongodb://localhost:27017/project4');
+// mongoose.connect('mongodb://heroku_vh0b46wh:sogalo3bqpc70bbcp3vt66a6f9@ds017248.mlab.com:17248/heroku_vh0b46wh');
+mongoose.connect(config.database);
 
 var routes = require('./config/routes');
 
