@@ -12,7 +12,7 @@ body {
   font-size: 25px;
   font-weight: bolder;
   text-transform: none !important;
-  font-family: "Reenie Beanie", arial, sans-serif;
+  font-family: 'Special Elite','Helvetica';
 }
 
 .nav {
@@ -34,16 +34,22 @@ body {
 }
 
 #homeTitle {
-  font-family: "Reenie Beanie", arial, sans-serif;
-  font-size: 80px;
+  font-family: 'Special Elite','Helvetica';
+  font-size: 150px;
   color: #74FFA5;
-  font-size: 200px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -66px;
-  margin-left: -205px;
+  top: 40%;
+  margin-left: 20%;
   width: 500px;
   height: 100px;
+}
+#tagline {
+  font-family: 'Special Elite','Helvetica';
+  font-size: 50px;
+  color: #DAFFA4;
+  position: absolute;
+  top: 60%;
+  margin-left: 20%;
+
 }
 
