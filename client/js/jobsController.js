@@ -8,7 +8,7 @@ function JobsController(JobPosts, $http) {
   vm.addJobPost = JobPosts.addJobPost;
 
   function jobPosts () {
-    $http.get(URI + '/posts/')
+    $http.get(URI + 'posts/')
         .then(function (data) {
           JobPosts.jobPosts = data.data.posts
           vm.jobPosts = JobPosts.jobPosts
